@@ -2,7 +2,6 @@
 list(APPEND CXX_EXCLUDED_OPTIONS
   -Werror=implicit-int
   -Wold-style-definition
-  -Wno-pointer-sign
 )
 
 ########################################################
@@ -42,8 +41,6 @@ check_set_compiler_property(PROPERTY warning_base
 
 # C implicit promotion rules will want to make floats into doubles very easily
 check_set_compiler_property(APPEND PROPERTY warning_base -Wdouble-promotion)
-
-check_set_compiler_property(APPEND PROPERTY warning_base -Wno-pointer-sign)
 
 # Prohibit void pointer arithmetic. Illegal in C99
 check_set_compiler_property(APPEND PROPERTY warning_base -Wpointer-arith)

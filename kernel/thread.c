@@ -1165,8 +1165,9 @@ FUNC_NORETURN void k_thread_user_mode_enter(k_thread_entry_t entry,
 #error "Unsupported configuration for stack analysis"
 #endif /* CONFIG_STACK_GROWS_UP */
 
-int z_stack_space_get(const uint8_t *stack_start, size_t size, size_t *unused_ptr)
+int z_stack_space_get(const void *stack, size_t size, size_t *unused_ptr)
 {
+	const uint8_t *stack_start = stack;
 	size_t unused = 0;
 	const uint8_t *checked_stack = stack_start;
 	/* Take the address of any local variable as a shallow bound for the
