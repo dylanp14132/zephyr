@@ -157,7 +157,7 @@ extern uint8_t *z_priv_stack_find(k_thread_stack_t *stack);
 #endif /* CONFIG_GEN_PRIV_STACKS */
 
 /* Calculate stack usage. */
-int z_stack_space_get(const uint8_t *stack_start, size_t size, size_t *unused_ptr);
+int z_stack_space_get(const void *stack, size_t size, size_t *unused_ptr);
 
 #ifdef CONFIG_USERSPACE
 bool z_stack_is_user_capable(k_thread_stack_t *stack);
